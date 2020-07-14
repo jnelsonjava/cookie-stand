@@ -21,15 +21,16 @@ function Store(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustom
     this.hoursOfOperation = [];
     for (var i = this.locationOpen; i < this.locationClose; i++) {
       if (i < 12) {
-        this.hoursOfOperation.push(i + 'am');
+        this.hoursOfOperation.push(i + ':00 am');
       } else if (i === 12) {
-        this.hoursOfOperation.push(i + 'pm');
+        this.hoursOfOperation.push(i + ':00 pm');
       } else {
-        this.hoursOfOperation.push((i - 12) + 'pm');
+        this.hoursOfOperation.push((i - 12) + '00 pm');
       }
     }
   };
   this.calculateCookiesPurchasedPerHour = function() {
+    this.simulatedCookiesPurchasedPerHour = [];
     for (var j = this.locationOpen; j < this.locationClose; j++) {
       this.simulatedCookiesPurchasedPerHour.push(Math.round(this.avgCookiesPerCustomer * this.generateRandomCustomerPerHour()));
     }
@@ -53,6 +54,98 @@ function Store(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustom
   };
 }
 
+
+Store.prototype.populateListProperties = function () {
+  this.calculateCookiesPurchasedPerHour();
+  this.updateHoursOfOperation();
+};
+
+Store.prototype.renderTableHead = function(tableID) {
+  // make sure Store.populateListProperties() runs previous to building table!!!!
+
+  // ALSO!!! This is not dynamic to different hours per store
+  // so it will need to check earliest open and latest close
+  // to eventually build a fully dynamic table view.
+  // Add location list as a parameter or something, figure it out later
+
+  // target table and create head, row, and first empty cell
+  var tableElement = document.getElementById(tableID);
+  var theadElement = document.createElement('thead');
+  var trElement = document.createElement('tr');
+  var thElement = document.createElement('th');
+  trElement.appendChild(thElement);
+  console.log('in method');
+
+  // loop through open hours to fill head row with cells
+  for (var i = 0; i < this.hoursOfOperation.length; i++) {
+    console.log('in loop');
+    thElement = document.createElement('th');
+    thElement.textContent = this.hoursOfOperation[i];
+    trElement.appendChild(thElement);
+  }
+
+  // add lasts cell for row total and append it all up to the table
+  thElement = document.createElement('th');
+  thElement.textContent = 'Daily Location Total';
+  trElement.appendChild(thElement);
+  theadElement.appendChild(trElement);
+  tableElement.appendChild(theadElement);
+};
+
+Store.prototype.renderTableBody = function (tableID) {
+  var tableElement = document.getElementById(tableID);
+  var tbodyElement = document.createElement('tbody');
+  var trElement = document.createElement('tr');
+  var thElement = document.createElement('th');
+  thElement.textContent = this.city;
+  trElement.appendChild(thElement);
+
+  var tdElement;
+  var cookieSum = 0;
+  for (var i = 0; i < this.simulatedCookiesPurchasedPerHour.length; i++) {
+    tdElement = document.createElement('td');
+    tdElement.textContent = this.simulatedCookiesPurchasedPerHour[i];
+    trElement.appendChild(tdElement);
+    cookieSum += this.simulatedCookiesPurchasedPerHour[i];
+  }
+
+  tdElement = document.createElement('td');
+  tdElement.textContent = cookieSum;
+  trElement.appendChild(tdElement);
+  tbodyElement.appendChild(trElement);
+  tableElement.appendChild(tbodyElement);
+};
+
+Store.prototype.renderTableFoot = function (tableID, allLocations) {
+  var tableElement = document.getElementById(tableID);
+  var tfootElement = document.createElement('tfoot');
+  var trElement = document.createElement('tr');
+  var thElement = document.createElement('th');
+  thElement.textContent = 'Totals';
+  trElement.appendChild(thElement);
+
+  var cookieSum = 0;
+  var hourlyTotalCookies;
+  var tdElement;
+  for (var i = 0; i < this.simulatedCookiesPurchasedPerHour.length; i++) {
+    hourlyTotalCookies = 0;
+    for (var j = 0; j < allLocations.length; j++) {
+      hourlyTotalCookies += allLocations[j].simulatedCookiesPurchasedPerHour[i];
+    }
+    tdElement = document.createElement('td');
+    tdElement.textContent = hourlyTotalCookies;
+    trElement.appendChild(tdElement);
+    cookieSum += hourlyTotalCookies;
+
+  }
+  tdElement = document.createElement('td');
+  tdElement.textContent = cookieSum;
+  trElement.appendChild(tdElement);
+  tfootElement.appendChild(trElement);
+  tableElement.appendChild(tfootElement);
+};
+
+
 var seattleLocation = new Store('Seattle', 23, 65, 6.3, 6, 20);
 var tokyoLocation = new Store('Tokyo', 3, 24, 1.2, 6, 20);
 var dubaiLocation = new Store('Dubai', 11, 38, 3.7, 6, 20);
@@ -61,17 +154,19 @@ var limaLocation = new Store('Lima', 2, 16, 4.6, 6, 20);
 
 var allLocations = [seattleLocation, tokyoLocation, dubaiLocation, parisLocation, limaLocation];
 
-var displayAllLocationCookies = function(locList) {
-  for (var i = 0; i < locList.length; i++) {
-    locList[i].calculateCookiesPurchasedPerHour();
-    locList[i].updateHoursOfOperation();
-    locList[i].displayLocationCookiePerHour('cookie-lists');
-  }
-};
+for (var i = 0; i < allLocations.length; i++) {
+  allLocations[i].populateListProperties();
+}
 
-displayAllLocationCookies(allLocations);
+// referenced for eslint disable https://eslint.org/docs/2.13.1/user-guide/configuring
 
+allLocations[0].renderTableHead('cookie-table');
 
+for (var j = 0; j < allLocations.length; j++) {
+  allLocations[j].renderTableBody('cookie-table');
+}
+
+allLocations[0].renderTableFoot('cookie-table', allLocations);
 
 
 
