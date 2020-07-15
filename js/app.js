@@ -21,11 +21,11 @@ function Store(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustom
     this.hoursOfOperation = [];
     for (var i = this.locationOpen; i < this.locationClose; i++) {
       if (i < 12) {
-        this.hoursOfOperation.push(i + ':00 am');
+        this.hoursOfOperation.push(i + ':00am');
       } else if (i === 12) {
-        this.hoursOfOperation.push(i + ':00 pm');
+        this.hoursOfOperation.push(i + ':00pm');
       } else {
-        this.hoursOfOperation.push((i - 12) + '00 pm');
+        this.hoursOfOperation.push((i - 12) + ':00pm');
       }
     }
   };
