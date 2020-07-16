@@ -77,8 +77,58 @@ main {
   font-size: x-large;
 }
 
+.blurb p {
+  margin-top: 15px;
+}
 
+main > section {
+  overflow: hidden;
+}
 
+main > section > h2 {
+  margin-top: 20px;
+  font-size: x-large;
+}
+
+#product-container {
+  overflow: hidden;
+}
+
+.product-card {
+  width: 220px;
+  height: 230px;
+  margin: 30px 10px 0 10px;
+  float: left;
+  background-color: chartreuse;
+}
+
+.product-card img {
+  max-width: 220px;
+  max-height: 230px;
+}
+
+footer {
+  margin: auto;
+  margin-top: 60px;
+  width: 960px;
+  background-color: chartreuse;
+}
+
+footer nav {
+  height: 75px;
+  width: 23%;
+  margin: auto;
+}
+
+footer nav ul {
+  overflow: hidden;
+}
+
+footer nav ul li {
+  float: left;
+  margin-top: 30px;
+  margin-left: 50px;
+}
 
 
 
