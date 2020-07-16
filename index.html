@@ -10,56 +10,51 @@
 </head>
 <body>
   <header>
-    <h1>Header Nameplate</h1>
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html">Home</a>
-        </li>
-        <li>
-          <a href="sales.html">Sales</a>
-        </li>
-      </ul>
-    </nav>
+    <div>
+      <div>
+        <h1>Pat's Salmon Cookies</h1>
+        <h3>Home of the World Famous Salmon Cookie</h3>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="sales.html">Sales</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <img src="img/salmon.png" alt="a fairly accurate image of a salmon">
     </header>
   <main>
     <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp -->
     <div class="slideshow-container">
       <!-- adding functionality later -->
-      <img src="img/family.jpg" alt="a fairly accurate image of a salmon">
+      <img src="img/family.jpg" alt="a family enjoying cookies and milk">
     </div>
 
-    <div>
+    <div class="blurb">
       <h2>Paragraph Header</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eos iure nam ratione cum at quam dolor officiis vitae explicabo aperiam laborum sit adipisci in possimus nulla consequatur, ipsa dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, modi ipsam delectus, numquam eos consequatur, repellendus itaque distinctio praesentium consequuntur assumenda laudantium ducimus accusantium ex fugit nostrum! Natus, facere odit!</p>
     </div>
 
     <section>
       <h2>Products Header</h2>
-      <div class="product">
-        <img src="img/frosted-cookie.jpg" alt="a fairly accurate image of a salmon">
-      </div>
-      <div class="product">
-        <img src="img/cutter.jpeg" alt="a fairly accurate image of a salmon">
-      </div>
-      <div class="product">
-        <img src="img/fish.jpg" alt="a fairly accurate image of a salmon">
-      </div>
-      <div class="product">
-        <img src="img/chinook.jpg" alt="a fairly accurate image of a salmon">
-      </div>
-      <div class="product">
-        <img src="img/shirt.jpg" alt="a fairly accurate image of a salmon">
-      </div>
-      <div class="product">
-
-      </div>
-      <div class="product">
-
-      </div>
-      <div class="product">
-
+      <div id="product-container">
+        <div class="product-card">
+          <img src="img/frosted-cookie.jpg" alt="a picture of a fish cookie">
+        </div>
+        <div class="product-card">
+          <img src="img/cutter.jpeg" alt="a fish shaped cookie cutter">
+        </div>
+        <div class="product-card">
+          <img src="img/fish.jpg" alt="a variety of fish stickers">
+        </div>
+        <div class="product-card">
+          <img src="img/shirt.jpg" alt="a shirt with fish on the front">
+        </div>
       </div>
     </section>
   </main>
@@ -80,12 +75,14 @@
         <li>contact</li>
         <li>contact</li>
       </ul>
+      <img src="img/chinook.jpg" alt="a fairly accurate image of a chinook salmon">
       <ul>
         <li>social media</li>
         <li>social media</li>
         <li>social media</li>
       </ul>
     </section>
+
   </footer>
 </body>
 </html>

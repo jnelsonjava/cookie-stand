@@ -1,4 +1,241 @@
-@font-face {
+body {
+  background-color: aliceblue;
+}
+
+header {
+  margin: auto;
+  margin-top: 30px;
+  width: 960px;
+  height: 200px;
+  background-color: bisque;
+}
+
+header > div {
+  width: 50%;
+  float: left;
+}
+
+header > div div {
+  margin-top: 50px;
+  height: 75px;
+}
+
+header > div div h1 {
+  font-size: xx-large;
+  text-align: center;
+}
+
+header > div div h3 {
+  font-size: larger;
+  text-align: center;
+}
+
+header > div nav {
+  height: 75px;
+}
+
+header > div nav ul {
+  overflow: hidden;
+}
+
+header > div nav ul li {
+  float: left;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+header > div nav ul li:first-child {
+  margin-left: 150px;
+}
+
+header > img {
+  display: block;
+  float: left;
+  max-width: 50%;
+}
+
+main {
+  width: 960px;
+  margin: auto;
+}
+
+.slideshow-container {
+  width: 780px;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.slideshow-container img {
+  max-width: 780px;
+}
+
+.blurb {
+  margin-top: 30px;
+}
+
+.blurb h2 {
+  font-size: x-large;
+}
+
+.blurb p {
+  margin-top: 15px;
+}
+
+main > section {
+  overflow: hidden;
+}
+
+main > section > h2 {
+  margin-top: 20px;
+  font-size: x-large;
+}
+
+#product-container {
+  overflow: hidden;
+}
+
+.product-card {
+  width: 220px;
+  height: 230px;
+  margin: 30px 10px 0 10px;
+  float: left;
+  background-color: chartreuse;
+}
+
+.product-card img {
+  max-width: 220px;
+  max-height: 230px;
+}
+
+footer {
+  margin: auto;
+  margin-top: 60px;
+  width: 960px;
+  background-color: chartreuse;
+}
+
+footer nav {
+  height: 75px;
+  width: 23%;
+  margin: auto;
+}
+
+footer nav ul {
+  overflow: hidden;
+}
+
+footer nav ul li {
+  float: left;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @font-face {
   font-family: 'Rancher';
   src: url('/fonts/Ranchers/Ranchers-Regular.ttf') format('truetype');
 }
@@ -21,5 +258,5 @@ table {
 th, td {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(9, 41, 41);
-}
+} */
 
