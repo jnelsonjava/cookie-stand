@@ -9,6 +9,7 @@ Creating a website for a cookie business including a page for sales data analysi
 ### Attributions:
 
   - Thanks to Tif Taylor for major assistance in the design of table structural rendering.
+  - Home design heavily influenced by https://www.cmbc.com/, go get some delicious cookies.
 
 ### Links and Resources
 
