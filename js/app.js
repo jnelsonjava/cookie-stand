@@ -88,11 +88,9 @@ Store.prototype.renderTableHead = function(tableID) {
   var trElement = document.createElement('tr');
   var thElement = document.createElement('th');
   trElement.appendChild(thElement);
-  console.log('in method');
 
   // loop through open hours to fill head row with cells
   for (var i = 0; i < this.hoursOfOperation.length; i++) {
-    console.log('in loop');
     thElement = document.createElement('th');
     thElement.textContent = this.hoursOfOperation[i];
     trElement.appendChild(thElement);
@@ -156,8 +154,32 @@ Store.prototype.renderTableFoot = function (tableID, allLocations) {
   tdElement.textContent = cookieSum;
   trElement.appendChild(tdElement);
   tfootElement.appendChild(trElement);
+  // adding ID found at https://www.w3schools.com/jsref/prop_html_id.asp
+  tfootElement.id = 'cookie-footer';
   tableElement.appendChild(tfootElement);
 };
+
+function addUserSubmittedStore(event) {
+  event.preventDefault();
+
+  var city = event.target.city.value;
+  var minHourlyCustomers = parseInt(event.target['min-hourly-customers'].value);
+  var maxHourlyCustomers = parseInt(event.target['max-hourly-customers'].value);
+  // discovered parseFloat here https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
+  var avgCookiesPerCustomer = parseFloat(event.target['avg-cookies-per-customer'].value);
+  var locationOpen = 6;
+  var locationClose = 20;
+
+  var newStore = new Store(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer, locationOpen, locationClose);
+
+  var tfootElement = document.getElementById('cookie-footer');
+  // found at https://www.abeautifulsite.net/adding-and-removing-elements-on-the-fly-using-javascript
+  tfootElement.parentNode.removeChild(tfootElement);
+
+  newStore.populateListProperties();
+  newStore.renderTableBody('cookie-table');
+  newStore.renderTableFoot('cookie-table', allLocations);
+}
 
 
 new Store('Seattle', 23, 65, 6.3, 6, 20);
@@ -182,7 +204,8 @@ for (var j = 0; j < allLocations.length; j++) {
 allLocations[0].renderTableFoot('cookie-table', allLocations);
 
 
-
+var newStoreFormElement = document.getElementById('new-store');
+newStoreFormElement.addEventListener('submit', addUserSubmittedStore);
 
 
 
