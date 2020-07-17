@@ -98,7 +98,7 @@ Store.prototype.renderTableHead = function(tableID) {
 
   // add lasts cell for row total and append it all up to the table
   thElement = document.createElement('th');
-  thElement.textContent = 'Daily Location Total';
+  thElement.textContent = 'Daily Total';
   trElement.appendChild(thElement);
   theadElement.appendChild(trElement);
   tableElement.appendChild(theadElement);

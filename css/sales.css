@@ -1,0 +1,100 @@
+form {
+  height: 200px;
+  width: 480px;
+  margin-top: 30px;
+}
+
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms
+button input {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+fieldset {
+  border: 1px solid black;
+  padding-top: 30px;
+}
+
+legend {
+  margin-left: 20px;
+}
+
+/* reference for label alignment https://css-tricks.com/tips-for-creating-great-web-forms/ */
+label {
+  float: left;
+  clear: left;
+  text-align: right;
+  width: 200px;
+  line-height: 1.2em;
+}
+
+input {
+  float: left;
+}
+
+label, input {
+  margin: 2px 4px;
+}
+
+button {
+  float: left;
+  clear: left;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: bisque;
+  transition: 500ms;
+}
+
+table {
+  width: 960px;
+  margin-top: 30px;
+}
+
+th {
+  padding: 2px;
+  font-style: italic;
+}
+
+td {
+  border: 1px solid black;
+  text-align: right;
+  padding: 2px
+}
+
+tfoot {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
