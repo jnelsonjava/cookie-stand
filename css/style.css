@@ -99,19 +99,20 @@ main > section > h2 {
   height: 230px;
   margin: 30px 10px 0 10px;
   float: left;
-  background-color: chartreuse;
+  /* background-color: chartreuse; */
 }
 
 .product-card img {
   max-width: 220px;
   max-height: 230px;
+  border: 5px outset rgba(99, 21, 21, 0.438);
 }
 
 footer {
   margin: auto;
   margin-top: 60px;
   width: 960px;
-  background-color: chartreuse;
+  background-color: bisque;
 }
 
 footer nav {
@@ -130,6 +131,24 @@ footer nav ul li {
   margin-left: 50px;
 }
 
+footer section {
+  overflow: hidden;
+}
+
+footer section ul {
+  float: left;
+  width: 25%;
+}
+
+footer section ul li {
+  width: 50%;
+  margin: auto;
+}
+
+footer section img {
+  float: left;
+  width: 50%;
+}
 
 
 
