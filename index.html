@@ -6,6 +6,8 @@
   <title>Salmon Cookies</title>
   <link rel="stylesheet" href="css/reset.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/slide.css" type="text/css">
+
 
 </head>
 <body>
@@ -29,10 +31,56 @@
     <img src="img/salmon.png" alt="a fairly accurate image of a salmon">
     </header>
   <main>
-    <!-- https://www.w3schools.com/howto/howto_js_slideshow.asp -->
     <div class="slideshow-container">
-      <!-- adding functionality later -->
-      <img src="img/family.jpg" alt="a family enjoying cookies and milk">
+      <span id="slider-image-1"></span>
+      <span id="slider-image-2"></span>
+      <span id="slider-image-3"></span>
+      <span id="slider-image-4"></span>
+      <span id="slider-image-5"></span>
+      <span id="slider-image-6"></span>
+
+      <div class="image-container">
+
+        <div class="single-slide">
+          <img src="img/familycrop.jpg" class="slider-image" alt="a family enjoying cookies and milk">
+          <div class="slider-text">Delivery available!<br> Order from the comfort of your home.</div>
+        </div>
+      
+        <div class="single-slide">
+          <img src="img/tokyo.jpg" class="slider-image" alt="night view of Tokyo cookie shop">
+          <div class="slider-text">1-23-4 Akasaka, Minato-ku<br> Tokyo-to 567-8910<br> Japan</div>
+        </div>
+      
+        <div class="single-slide">
+          <img src="img/lima.jpg" class="slider-image" alt="a day market in Lima">
+          <div class="slider-text">Av. Arequipa 1234<br> Miraflores 15074<br> Peru</div>
+        </div>
+        
+        <div class="single-slide">
+          <img src="img/paris.jpg" class="slider-image" alt="a day market in Lima">
+          <div class="slider-text">Rue Emilio Castelar<br> 75012 Paris<br> France</div>
+        </div>
+        
+        <div class="single-slide">
+          <img src="img/dubai.jpg" class="slider-image" alt="a day market in Lima">
+          <div class="slider-text">12-34 18th St<br> Al Raffa - Dubai<br>UAE</div>
+        </div>
+        
+        <div class="single-slide">
+          <img src="img/seattle.jpg" class="slider-image" alt="a day market in Lima">
+          <div class="slider-text">1527 Western Ave<br> Seattle, WA 98101<br> USA</div>
+        </div>
+
+
+      </div>
+      <div class="button-container">
+        <a href="#slider-image-1" class="slider-button"></a>
+        <a href="#slider-image-2" class="slider-button"></a>
+        <a href="#slider-image-3" class="slider-button"></a>
+        <a href="#slider-image-4" class="slider-button"></a>
+        <a href="#slider-image-5" class="slider-button"></a>
+        <a href="#slider-image-6" class="slider-button"></a>
+      </div>
     </div>
 
     <div class="blurb">
@@ -77,42 +125,16 @@
       </ul>
       <img src="img/chinook.jpg" alt="a fairly accurate image of a chinook salmon">
       <ul>
-        <li><a href="index.html">Facebook</a></li>
+        <li><a href="index.html">Instagram</a></li>
         <li><a href="index.html">Twitter</a></li>
-        <li><a href="index.html">LinkedIn</a></li>
+        <li><a href="index.html">Facebook</a></li>
       </ul>
     </section>
 
   </footer>
+  <script src="js/index.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
