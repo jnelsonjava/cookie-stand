@@ -24,13 +24,11 @@ function Store(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustom
 
 
 Store.prototype.generateRandomCustomerPerHour = function() {
-  // used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random for reference
   var thisCustomerCount = Math.floor(Math.random() * (this.maxHourlyCustomers + 1 - this.minHourlyCustomers)) + this.minHourlyCustomers;
   return thisCustomerCount;
 };
 
 Store.prototype.updateHoursOfOperation = function() {
-  // referenced https://www.w3schools.com/jsref/jsref_push.asp for push method
   this.hoursOfOperation = [];
   for (var i = this.locationOpen; i < this.locationClose; i++) {
     if (i < 12) {
@@ -82,21 +80,18 @@ Store.prototype.renderTableHead = function(tableID) {
   // to eventually build a fully dynamic table view.
   // Add location list as a parameter or something, figure it out later
 
-  // target table and create head, row, and first empty cell
   var tableElement = document.getElementById(tableID);
   var theadElement = document.createElement('thead');
   var trElement = document.createElement('tr');
   var thElement = document.createElement('th');
   trElement.appendChild(thElement);
 
-  // loop through open hours to fill head row with cells
   for (var i = 0; i < this.hoursOfOperation.length; i++) {
     thElement = document.createElement('th');
     thElement.textContent = this.hoursOfOperation[i];
     trElement.appendChild(thElement);
   }
 
-  // add lasts cell for row total and append it all up to the table
   thElement = document.createElement('th');
   thElement.textContent = 'Daily Total';
   trElement.appendChild(thElement);
@@ -154,7 +149,6 @@ Store.prototype.renderTableFoot = function (tableID, allLocations) {
   tdElement.textContent = cookieSum;
   trElement.appendChild(tdElement);
   tfootElement.appendChild(trElement);
-  // adding ID found at https://www.w3schools.com/jsref/prop_html_id.asp
   tfootElement.id = 'cookie-footer';
   tableElement.appendChild(tfootElement);
 };
@@ -165,7 +159,6 @@ function addUserSubmittedStore(event) {
   var city = event.target.city.value;
   var minHourlyCustomers = parseInt(event.target['min-hourly-customers'].value);
   var maxHourlyCustomers = parseInt(event.target['max-hourly-customers'].value);
-  // discovered parseFloat here https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
   var avgCookiesPerCustomer = parseFloat(event.target['avg-cookies-per-customer'].value);
   var locationOpen = 6;
   var locationClose = 20;
@@ -173,7 +166,6 @@ function addUserSubmittedStore(event) {
   var newStore = new Store(city, minHourlyCustomers, maxHourlyCustomers, avgCookiesPerCustomer, locationOpen, locationClose);
 
   var tfootElement = document.getElementById('cookie-footer');
-  // found at https://www.abeautifulsite.net/adding-and-removing-elements-on-the-fly-using-javascript
   tfootElement.parentNode.removeChild(tfootElement);
 
   newStore.populateListProperties();
@@ -193,7 +185,6 @@ for (var i = 0; i < allLocations.length; i++) {
   allLocations[i].populateListProperties();
 }
 
-// referenced for eslint disable https://eslint.org/docs/2.13.1/user-guide/configuring
 
 allLocations[0].renderTableHead('cookie-table');
 
