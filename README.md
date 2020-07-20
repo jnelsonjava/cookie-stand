@@ -13,6 +13,11 @@ Creating a website for a cookie business including a page for sales data analysi
 
 ### Links and Resources
 
+  - Fonts:
+    - Ranchers
+      - Designer - Impallari Type
+      - https://fonts.google.com/specimen/Ranchers?query=rancher&sidebar.open&selection.family=Ranchers#standard-styles
+
   - Images:
     - Tokyo image cropped from https://commons.wikimedia.org/wiki/File:Pike-place-market.jpg
     - Lima image cropped from https://www.flickr.com/photos/mmm-yoso/31471116111/in/photostream/
@@ -37,6 +42,10 @@ Creating a website for a cookie business including a page for sales data analysi
     - Parsing strings to floats - https://gomakethings.com/converting-strings-to-numbers-with-vanilla-javascript/
     - Deleting a node by accessing its parent - https://www.abeautifulsite.net/adding-and-removing-elements-on-the-fly-using-javascript
     - eslint disable line - https://eslint.org/docs/2.13.1/user-guide/configuring
+    - Using Google Fonts - https://developers.google.com/fonts/docs/getting_started
+    - Form label alignment - https://css-tricks.com/tips-for-creating-great-web-forms/
+    - Form styling - https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms
+    - Form decimal input - https://isotoma.com/blog/2012/03/02/html5-input-typenumber-and-decimalsfloats-in-chrome/
 
 
 

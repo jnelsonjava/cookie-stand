@@ -29,6 +29,7 @@
   float: left;
   margin: 0px;
   padding: 0px;
+  margin-bottom: 2px;
 }
 
 .slider-text {
@@ -48,7 +49,7 @@
   height: 10px;
   width: 10px;
   border-radius: 5px;
-  background-color: rgb(63, 4, 4);
+  background-color: #f115159c;
 }
 
 #slider-image-1:target ~ .image-container {
